@@ -27,7 +27,7 @@ public class Funcionario {
         int bonus = 0, horas = 0, salario = 0;
 
         if (tarefas.size() == 0) {
-           return salarioBase;
+            return salarioBase;
         } else {
             for (Tarefa task : tarefas) {
                 horas += task.getTempoExecucao();
