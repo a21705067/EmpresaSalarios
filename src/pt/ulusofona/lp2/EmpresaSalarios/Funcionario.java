@@ -15,6 +15,10 @@ public class Funcionario {
         this.tarefas = new ArrayList<>();
     }
 
+    public Funcionario(String nome) {
+        this.nome = nome;
+    }
+
     public boolean adicionaTarefa(Tarefa tarefa) {
         if (this.tarefas.contains(tarefa)) {
             return false;
