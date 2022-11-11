@@ -17,6 +17,15 @@ public class Funcionario {
 
     public Funcionario(String nome) {
         this.nome = nome;
+        this.salarioBase = 505;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public ArrayList<Tarefa> getTarefas() {
+        return tarefas;
     }
 
     public boolean adicionaTarefa(Tarefa tarefa) {
@@ -27,19 +36,22 @@ public class Funcionario {
         return true;
     }
 
-    public int calculaSalario(Tarefa tarefa) {
-        int bonus = 0, horas = 0, salario = 0;
+    public int calculaSalario(String mes) {
+        int bonus = 0, horas = 0, salario = 0, totalTarefas = 0;
 
         if (tarefas.size() == 0) {
             return salarioBase;
         } else {
             for (Tarefa task : tarefas) {
-                horas += task.getTempoExecucao();
+                if (task.getMes() == mes) {
+                    totalTarefas++;
+                    horas += task.getTempoExecucao();
+                }
             }
         }
 
         if (tarefas.size() > 10 && horas < 50) {
-            bonus = tarefas.size() - 5;
+            bonus = totalTarefas - 5;
         }
 
         return salarioBase + 2 * horas + bonus;

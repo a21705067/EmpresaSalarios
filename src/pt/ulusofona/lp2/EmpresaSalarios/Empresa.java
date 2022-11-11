@@ -13,6 +13,14 @@ public class Empresa {
         this.tarefas = new ArrayList<>();
     }
 
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public ArrayList<Tarefa> getTarefas() {
+        return tarefas;
+    }
+
     public boolean adicionaFuncionario(Funcionario funcionario) {
         if (this.funcionarios.contains(funcionario)) {
             return false;
@@ -30,4 +38,6 @@ public class Empresa {
         this.tarefas.add(tarefa);
         return true;
     }
+
+
 }
