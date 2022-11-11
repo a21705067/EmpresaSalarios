@@ -1,6 +1,5 @@
-package pt.ulusofona.lp2.EmpresaSalarios;
+package pt.ulusofona.lp2.empresaSalarios;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Main {
@@ -26,32 +25,33 @@ public class Main {
         return empresa.getTarefas();
     }
 
-    ArrayList<String> obterRelatorioSalarios(Empresa emp, String mes) {
+    static ArrayList<String> obterRelatorioSalarios(Empresa emp, String mes) {
         ArrayList<String> relatorio = new ArrayList<>();
 
-        relatorio.add("----------------------------------------");
         relatorio.add("Relatório de Salários - mês de " + mes);
         for (Funcionario func : emp.getFuncionarios()) {
             relatorio.add(func.getNome() + " - " + func.calculaSalario(mes));
         }
-        relatorio.add("----------------------------------------");
 
         return relatorio;
     }
 
-    static void obterRelatorioDetalhado(Empresa emp, String mes) {
-        System.out.println("----------------------------------------");
-        System.out.println("Relatório detalhado - mês de " + mes);
+    static ArrayList<String> obterRelatorioDetalhado(Empresa emp, String mes) {
+        ArrayList<String> relatorio = new ArrayList<>();
+
+        relatorio.add("Relatório detalhado - mês de " + mes);
         for (Funcionario func : emp.getFuncionarios()) {
-            System.out.println("  " + func.getNome() + " - " + func.calculaSalario(mes));
+            relatorio.add("  " + func.getNome() + " - " + func.calculaSalario(mes));
             if (func.getTarefas().size() == 0) {
-                System.out.println("    Sem tarefas");
-            }
-            for (Tarefa tarefa : func.getTarefas()) {
-                System.out.println("    " + tarefa.getNome() + " (" + tarefa.getTempoExecucao() + ")");
+                relatorio.add("    Sem tarefas");
+            } else {
+                for (Tarefa tarefa : func.getTarefas()) {
+                    relatorio.add("    " + tarefa.getNome() + " (" + tarefa.getTempoExecucao() + ")");
+                }
             }
         }
-        System.out.println("----------------------------------------");
+
+        return relatorio;
     }
 
     static Empresa obterUmaEmpresa() {
@@ -77,6 +77,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
+//        Empresa empresa = obterUmaEmpresa();
+//        ArrayList<Funcionario> funcionarios = empresa.getFuncionarios();
+//        ArrayList<String> relatorio, relatorio1;
+//        int i = 1;
+//
+//        for (Funcionario func : funcionarios) {
+//            Tarefa tarefa = new Tarefa("Cenas"+i, "Agosto");
+//            func.tarefas.add(tarefa);
+//            tarefa.setTempoExecucao(i);
+//            i++;
+//        }
+//
+//        relatorio = obterRelatorioSalarios(empresa, "Agosto");
+//        relatorio1 = obterRelatorioDetalhado(empresa, "Agosto");
+//
+//        System.out.println(relatorio1);
 
     }
 }

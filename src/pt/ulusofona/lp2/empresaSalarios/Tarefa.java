@@ -1,4 +1,4 @@
-package pt.ulusofona.lp2.EmpresaSalarios;
+package pt.ulusofona.lp2.empresaSalarios;
 
 public class Tarefa {
     String nome;
@@ -42,5 +42,9 @@ public class Tarefa {
 
     public int getTempoExecucao() {
         return tempoExecucao;
+    }
+
+    public void setTempoExecucao(int tempoExecucao) {
+        this.tempoExecucao = tempoExecucao;
     }
 }

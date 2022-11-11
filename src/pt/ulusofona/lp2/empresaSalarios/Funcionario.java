@@ -1,4 +1,4 @@
-package pt.ulusofona.lp2.EmpresaSalarios;
+package pt.ulusofona.lp2.empresaSalarios;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,7 @@ public class Funcionario {
     public Funcionario(String nome) {
         this.nome = nome;
         this.salarioBase = 505;
+        this.tarefas = new ArrayList<>();
     }
 
     public String getNome() {

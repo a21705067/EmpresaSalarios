@@ -1,4 +1,4 @@
-package pt.ulusofona.lp2.EmpresaSalarios;
+package pt.ulusofona.lp2.empresaSalarios;
 
 import java.util.ArrayList;
 
