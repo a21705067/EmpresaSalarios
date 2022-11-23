@@ -76,6 +76,38 @@ public class Main {
         return empresa;
     }
 
+    static void registarCliente(Empresa emp, ClienteEmpresarial cliente) {
+        emp.adicionaClienteEmpresarial(cliente);
+    }
+
+    static void registarCliente(Empresa emp, ClienteIndividual cliente) {
+        emp.adicionaClienteIndividual(cliente);
+    }
+
+    static void registarEncomenda(Empresa empresa, ClienteEmpresarial cliente, Tarefa t)  {
+
+    }
+
+    static void registarEncomenda(Empresa empresa, ClienteIndividual cliente, Tarefa t) {
+
+    }
+
+    static ArrayList<ClienteEmpresarial> getClientesEmpresariais(Empresa empresa) {
+        return null;
+    }
+
+    static ArrayList<ClienteIndividual> getClientesIndividuais(Empresa empresa) {
+        return null;
+    }
+
+    static ArrayList<String> obterListaClientes(Empresa emp) {
+        return null;
+    }
+
+    static ArrayList<String> relatorioEncomendasMensais(Empresa e, String mes) {
+        return null;
+    }
+
     public static void main(String[] args) {
 //        Empresa empresa = obterUmaEmpresa();
 //        ArrayList<Funcionario> funcionarios = empresa.getFuncionarios();
