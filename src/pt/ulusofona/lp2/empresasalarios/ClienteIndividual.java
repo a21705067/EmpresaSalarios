@@ -1,4 +1,4 @@
-package pt.ulusofona.lp2.empresaSalarios;
+package pt.ulusofona.lp2.empresasalarios;
 
 public class ClienteIndividual extends Cliente {
 
