@@ -59,9 +59,9 @@ public class Main {
         Tarefa tarefa1 = new Tarefa("Faz nestum");
         Tarefa tarefa2 = new Tarefa("Faz cerelac");
         Tarefa tarefa3 = new Tarefa("Faz miluvit");
-        Funcionario func1 = new Funcionario("Tiago");
-        Funcionario func2 = new Funcionario("Vera");
-        Funcionario func3 = new Funcionario("Bruno");
+        Funcionario func1 = new Gestor("Tiago", 550);
+        Funcionario func2 = new Tarefeiro("Vera");
+        Funcionario func3 = new Tecnico("Bruno", 700);
 
         func1.adicionaTarefa(tarefa1);
         func2.adicionaTarefa(tarefa2);
@@ -109,22 +109,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        Empresa empresa = obterUmaEmpresa();
-//        ArrayList<Funcionario> funcionarios = empresa.getFuncionarios();
-//        ArrayList<String> relatorio, relatorio1;
-//        int i = 1;
-//
-//        for (Funcionario func : funcionarios) {
-//            Tarefa tarefa = new Tarefa("Cenas"+i, "Agosto");
-//            func.tarefas.add(tarefa);
-//            tarefa.setTempoExecucao(i);
-//            i++;
-//        }
-//
-//        relatorio = obterRelatorioSalarios(empresa, "Agosto");
-//        relatorio1 = obterRelatorioDetalhado(empresa, "Agosto");
-//
-//        System.out.println(relatorio1);
+        Empresa empresa = obterUmaEmpresa();
+        ArrayList<Funcionario> funcionarios = empresa.getFuncionarios();
+        ArrayList<String> relatorio, relatorio1;
+        int i = 1;
+
+        for (Funcionario func : funcionarios) {
+            Tarefa tarefa = new Tarefa("Cenas"+i, "Agosto");
+            func.tarefas.add(tarefa);
+            tarefa.setTempoExecucao(i);
+            i++;
+        }
+
+        relatorio = obterRelatorioSalarios(empresa, "Agosto");
+        relatorio1 = obterRelatorioDetalhado(empresa, "Agosto");
+
+        System.out.println(relatorio1);
 
     }
 }
