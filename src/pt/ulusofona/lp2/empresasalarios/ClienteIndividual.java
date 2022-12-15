@@ -14,4 +14,5 @@ public class ClienteIndividual extends Cliente {
         info[0] = this.nome + " | " + this.contactoTelefonico + " | " + this.nif;
         return info;
     }
+
 }

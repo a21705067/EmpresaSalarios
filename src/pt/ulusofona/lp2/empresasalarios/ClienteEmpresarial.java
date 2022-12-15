@@ -19,4 +19,5 @@ public class ClienteEmpresarial extends Cliente {
         info[1] = this.nomeResponsavel + " | " + this.telefoneResponsavel;
         return info;
     }
+
 }

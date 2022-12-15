@@ -6,4 +6,17 @@ public abstract class Cliente {
     int nif;
 
     abstract String[] obtemInfo();
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getContactoTelefonico() {
+        return contactoTelefonico;
+    }
+
+    public int getNif() {
+        return nif;
+    }
 }
+

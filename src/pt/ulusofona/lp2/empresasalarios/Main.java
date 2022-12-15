@@ -62,6 +62,8 @@ public class Main {
         Funcionario func1 = new Gestor("Tiago", 550);
         Funcionario func2 = new Tarefeiro("Vera");
         Funcionario func3 = new Tecnico("Bruno", 700);
+        ClienteEmpresarial clie1 = new ClienteEmpresarial("Cliente A", 123, 500000001,"Zé",123);
+        ClienteIndividual clie2 = new ClienteIndividual("Cliente B", 321, 100000001);
 
         func1.adicionaTarefa(tarefa1);
         func2.adicionaTarefa(tarefa2);
@@ -72,6 +74,8 @@ public class Main {
         empresa.adicionaTarefa(tarefa1);
         empresa.adicionaTarefa(tarefa2);
         empresa.adicionaTarefa(tarefa3);
+        empresa.adicionaClienteEmpresarial(clie1);
+        empresa.adicionaClienteIndividual(clie2);
 
         return empresa;
     }
@@ -85,7 +89,6 @@ public class Main {
     }
 
     static void registarEncomenda(Empresa empresa, ClienteEmpresarial cliente, Tarefa t)  {
-
     }
 
     static void registarEncomenda(Empresa empresa, ClienteIndividual cliente, Tarefa t) {
@@ -93,14 +96,21 @@ public class Main {
     }
 
     static ArrayList<ClienteEmpresarial> getClientesEmpresariais(Empresa empresa) {
-        return null;
+        return empresa.getClientesEmpresariais();
     }
 
     static ArrayList<ClienteIndividual> getClientesIndividuais(Empresa empresa) {
-        return null;
+        return empresa.getClientesIndividuais();
     }
 
     static ArrayList<String> obterListaClientes(Empresa emp) {
+        ArrayList<String> clientes = new ArrayList<>();
+
+        clientes.add("Lista de Clientes");
+
+        for (Cliente cliente : emp.getClientes()) {
+            clientes.add(cliente.getNome() + " | " + cliente.getContactoTelefonico() + " | " + cliente.getContactoTelefonico());
+        }
         return null;
     }
 

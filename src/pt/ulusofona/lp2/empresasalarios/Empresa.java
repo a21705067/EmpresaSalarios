@@ -6,12 +6,16 @@ public class Empresa {
     String nome;
     ArrayList<Funcionario> funcionarios;
     ArrayList<Tarefa> tarefas;
+    ArrayList<ClienteIndividual> clientesIndividuais;
+    ArrayList<ClienteEmpresarial> clientesEmpresariais;
     ArrayList<Cliente> clientes;
 
     public Empresa(String nome) {
         this.nome = nome;
         this.funcionarios = new ArrayList<>();
         this.tarefas = new ArrayList<>();
+        this.clientesIndividuais = new ArrayList<>();
+        this.clientesEmpresariais = new ArrayList<>();
         this.clientes = new ArrayList<>();
     }
 
@@ -33,19 +37,21 @@ public class Empresa {
     }
 
     public boolean adicionaClienteEmpresarial(ClienteEmpresarial cliente) {
-        if (this.clientes.contains(cliente)) {
+        if (this.clientesEmpresariais.contains(cliente)) {
             return false;
         }
 
+        this.clientesEmpresariais.add(cliente);
         this.clientes.add(cliente);
         return true;
     }
 
     public boolean adicionaClienteIndividual(ClienteIndividual cliente) {
-        if (this.clientes.contains(cliente)) {
+        if (this.clientesIndividuais.contains(cliente)) {
             return false;
         }
 
+        this.clientesIndividuais.add(cliente);
         this.clientes.add(cliente);
         return true;
     }
@@ -59,5 +65,15 @@ public class Empresa {
         return true;
     }
 
+    public ArrayList<ClienteIndividual> getClientesIndividuais() {
+        return clientesIndividuais;
+    }
 
+    public ArrayList<ClienteEmpresarial> getClientesEmpresariais() {
+        return clientesEmpresariais;
+    }
+
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
 }
